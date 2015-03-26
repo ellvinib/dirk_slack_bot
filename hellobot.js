@@ -8,7 +8,7 @@ module.exports = function (req, res, next) {
   var channelName = req.body.channel_name;
   var token = req.body.token;
 
-  var words = str.match(/\w+|"[^"]+"/g);
+  var words = text.match(/\w+|"[^"]+"/g);
   var action = words[0];
 
   if(basic.validRequest(token)){
