@@ -15,6 +15,7 @@ module.exports = function (req, res, next) {
   	if(action === 'message'){
   		var message = words[2].replace(/^"?(.+?)"?$/,'$1');
   		var to = words[1];
+  		return res.status(200).json({text:to,message:message});
   	  	basic.sendMessage(message,to);
   	}else{
   		return res.status(200).json({text:'The command didn\'t exist !'});
