@@ -12,10 +12,10 @@ module.exports = function (req, res, next) {
   var action = words[0];
 
   if(basic.validRequest(token)){
-  	if(action === 'prive'){
-  		//return res.status(200).json({1:words[0],2:words[1],2:words[2],3:words});
-  		//basic.sendMessage(words[2],'@'+words[1]);
-  		basic.sendMessage(words[2],'@'+words[1]);
+  	if(action === 'message'){
+  		var message = words[2].replace(/^"?(.+?)"?$/,'$1');
+  		var to = words[1];
+  	  	basic.sendMessage(message,to);
   	}else{
   		return res.status(200).json({text:'The command didn\'t exist !'});
   	}
