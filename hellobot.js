@@ -8,12 +8,12 @@ module.exports = function (req, res, next) {
   var channelName = req.body.channel_name;
   var token = req.body.token;
 
-  var words = text.match(/\w+|"[^"]+"/g);
+  var words = text.match(/\S+|"[^"]+"/g);
   var action = words[0];
 
   if(basic.validRequest(token)){
   	if(action === 'message'){
-  		var message = words[2].replace(/^"|"$/,'$1');
+  		var message = words[2].replace(/^"?(.+?)"?$/,'$1');
   		var to = words[1];
   		return res.status(200).json({text:to,message:message});
   	  	basic.sendMessage(message,to);
