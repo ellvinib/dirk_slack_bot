@@ -2,7 +2,7 @@ var requestify = require('requestify');
 
 module.exports.sendMessage = function(text,to){
 		var payload = {};
-		if(!to){
+		if(to){
 			payload.channel = to;
 		}
 		//payload.channel ='@vincentbouillart';
