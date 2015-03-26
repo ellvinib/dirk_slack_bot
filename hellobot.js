@@ -13,8 +13,9 @@ module.exports = function (req, res, next) {
 
   if(basic.validRequest(token)){
   	if(action === 'prive'){
-  		return res.status(200).json({1:words[0],2:words[1],2:words[2],3:words});
+  		//return res.status(200).json({1:words[0],2:words[1],2:words[2],3:words});
   		//basic.sendMessage(words[2],'@'+words[1]);
+  		basic.sendMessage(words[2],'@'+words[1]);
   	}else{
   		return res.status(200).json({text:'The command didn\'t exist !'});
   	}
