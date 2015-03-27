@@ -11,7 +11,7 @@ module.exports.sendMessage = function(text,to){
 		requestify.post('https://hooks.slack.com/services/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', payload);	
 }
 module.exports.validRequest = function(token){
-	if(token === '5i0Yz2sc5OfXUgwAEJyMtnlM'){
+	if(token === 'nwuXNw4P8XYxvyF2UZ6SthjX'){
 		return true;
 	}else {
 		return false;
